@@ -12,9 +12,9 @@ rebuild your project.
 
 you can then create a OpenAPI output by running the following command in your root of your function project.
 
-`dotnet ./bin/debug/net7.0/azfuncopenapi.dll`
+`dotnet ./bin/debug/net8.0/azfuncopenapi.dll`
 
-Make sure you swap out net7.0 for the version you are using within your project
+Make sure you swap out net8.0 for the version you are using within your project
 
 ## Options
 
@@ -24,7 +24,7 @@ Make sure you swap out net7.0 for the version you are using within your project
 | -o (--output)        | specify the output path for swagger definition file                                       |
 | -a (--apibaseurl)    | specify the API base url used within the swagger definition (default localhost)           |
 | -c (--configuration) | Specify the project Configuration. Default is 'Debug                                      |
-| -t (--target)        | Specifty the project target framework. Default is 'net7.0'                                |
+| -t (--target)        | Specifty the project target framework. Default is 'net8.0'                                |
 | -v (--version)       | Specify the OpenAPI version. Default is V3                                                |
 | -f (--format)        | Specify the OpenAPI output format. Value can be either 'json' or 'yaml'. Default is 'json |
 
