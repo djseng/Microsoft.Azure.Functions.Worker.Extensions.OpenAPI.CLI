@@ -1,10 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Project>
-  <Target Name="AddRuntimeDependenciesToContent"
-         BeforeTargets="GetCopyToOutputDirectoryItems"
-          DependsOnTargets="GenerateBuildDependencyFile;
-                            GenerateBuildRuntimeConfigurationFiles">
-    <ItemGroup>     
-      <ContentWithTargetPath Include="$(ProjectRuntimeConfigFilePath)" TargetPath="azfuncopenapi.runtimeconfig.json" CopyToOutputDirectory="PreserveNewest" />
-    </ItemGroup>
-  </Target>
+  <!--
+    Settings users may update as they see fit.
+  -->
+  <PropertyGroup>
+    <!--
+      The directory where the OpenAPI document will be saved.
+      Default is the current project directory.
+    -->
+    <AzureFunctionOpenApiOutputDirectory Condition="'$(AzureFunctionOpenApiOutputDirectory)' == ''">$(MSBuildProjectDirectory)</AzureFunctionOpenApiOutputDirectory>
+
+    <!--
+      The format of the OpenAPI document. Valid values are json and yaml.
+      Default is json.
+    -->
+    <AzureFunctionOpenApiFormat Condition="'$(AzureFunctionOpenApiFormat)' == ''">json</AzureFunctionOpenApiFormat>
+
+    <!--
+      The version of the OpenAPI document. Valid values are V2 and V3.
+      Default is V3.
+    -->
+    <AzureFunctionOpenApiVersion Condition="'$(AzureFunctionOpenApiVersion)' == ''">V3</AzureFunctionOpenApiVersion>
+
+    <!--
+      The base URL of the Azure Function host.
+      Default is localhost.
+    -->
+    <AzureFunctionOpenApiHost Condition="'$(AzureFunctionOpenApiHost)' == ''">localhost</AzureFunctionOpenApiHost>
+  </PropertyGroup>
 </Project>

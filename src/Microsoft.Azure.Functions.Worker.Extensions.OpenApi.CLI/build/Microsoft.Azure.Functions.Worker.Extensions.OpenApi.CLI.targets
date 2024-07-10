@@ -1,0 +1,18 @@
+<Project>
+  <Target Name="AddRuntimeDependenciesToContent"
+         BeforeTargets="GetCopyToOutputDirectoryItems"
+          DependsOnTargets="GenerateBuildDependencyFile;
+                            GenerateBuildRuntimeConfigurationFiles">
+    <ItemGroup>     
+      <ContentWithTargetPath Include="$(ProjectRuntimeConfigFilePath)" TargetPath="azfuncopenapi.runtimeconfig.json" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="AzureFunctionOpenApiPostBuild" AfterTargets="PostBuildEvent">
+    <Exec ContinueOnError="True" Command="dotnet azfuncopenapi.dll --project $(MSBuildProjectDirectory) --output $(AzureFunctionOpenApiOutputDirectory) --target $(TargetFramework) --configuration $(Configuration) --format $(AzureFunctionOpenApiFormat) --version $(AzureFunctionOpenApiVersion) --apibaseurl $(AzureFunctionOpenApiHost)" WorkingDirectory="$(OutputPath)">
+      <Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
+    </Exec>
+    <Message Importance="high" Text="$(OutputOfExec)" />
+  </Target>
+
+</Project>
