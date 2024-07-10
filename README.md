@@ -38,4 +38,4 @@ add the following to your csproj. file
 dotnet add package Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI --version 1.0.6
 ```
 
-see the [props](build/Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI.props) available for customization.
+see the [props](src/Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI/build/Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI.props) available for customization.
