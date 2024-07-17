@@ -6,7 +6,7 @@ This extension adds the functionality to run the OpenAPI as CLI project. In this
 
 Add the nuget package to your function project
 
-<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI" Version="1.0.6" />
+<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI" Version="1.0.7" />
 
 rebuild your project.
 
@@ -35,7 +35,7 @@ add the following to your csproj. file
 *** This is not published to a public registry, you will need to publish this nuget to your own registry.
 
 ```
-dotnet add package Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI --version 1.0.6
+dotnet add package Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI --version 1.0.7
 ```
 
 see the [props](src/Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI/build/Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI.props) available for customization.

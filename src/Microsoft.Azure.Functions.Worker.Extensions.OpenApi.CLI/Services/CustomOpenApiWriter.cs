@@ -15,7 +15,7 @@ namespace Microsoft.Azure.Functions.Worker.Extensions.OpenApi.CLI.Services
             if (!Directory.Exists(outputPath))
                 Directory.CreateDirectory(outputPath);
 
-            await File.WriteAllTextAsync($"{outputPath}{ProjectPathExtensions.DirectorySeparator}swagger.{format.ToDisplayName()}", openApiDocument, Encoding.UTF8);
+            await File.WriteAllTextAsync($"{outputPath}{ProjectPathExtensions.DirectorySeparator}swagger.{format.ToDisplayName()}", openApiDocument);
         }
     }
 }
